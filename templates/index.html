@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Text Summarizer</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">✦</span>
+            <span>AI Summarizer</span>
+        </div>
+
+        <!-- <div class="header-text">
+            Powered by Pegasus
+        </div> -->
+    </header>
+
+
+    <!-- Main -->
+    <main class="main-container">
+
+        <div class="title-section">
+            <h1>Summarize your text</h1>
+
+            <p>
+                Turn long conversations and text into clear, concise summaries.
+            </p>
+        </div>
+
+
+        <!-- Editor -->
+        <div class="editor-container">
+
+            <!-- Left Side -->
+            <section class="editor-panel">
+
+                <div class="panel-header">
+                    <span>Original Text</span>
+
+                    <button class="clear-btn" onclick="clearText()">
+                        Clear
+                    </button>
+                </div>
+
+
+                <textarea
+                    id="inputText"
+                    placeholder="Paste your text here..."
+                    oninput="updateWordCount()"
+                ></textarea>
+
+
+                <div class="panel-footer">
+
+                    <span id="wordCount">
+                        0 words
+                    </span>
+
+                    <button
+                        class="summarize-btn"
+                        onclick="summarizeText()"
+                        id="summarizeButton"
+                    >
+                        <span id="buttonText">Summarize</span>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Divider -->
+            <div class="divider"></div>
+
+
+            <!-- Right Side -->
+            <section class="editor-panel">
+
+                <div class="panel-header">
+                    <span>Summary</span>
+
+                    <button
+                        class="copy-btn"
+                        onclick="copySummary()"
+                        id="copyButton"
+                    >
+                        Copy
+                    </button>
+                </div>
+
+
+                <div
+                    id="outputText"
+                    class="output-area"
+                >
+                    <div class="empty-state">
+
+                        <div class="empty-icon">
+                            ✨
+                        </div>
+
+                        <p>
+                            Your summary will appear here
+                        </p>
+
+                        <span>
+                            Enter some text and click Summarize
+                        </span>
+
+                    </div>
+                </div>
+
+
+                <div class="panel-footer output-footer">
+
+                    <span id="summaryWordCount">
+                        0 words
+                    </span>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+        <!-- Status -->
+        <div id="status"></div>
+
+
+        <!-- Example -->
+        <div class="example-section">
+
+            <span>Try an example:</span>
+
+            <button onclick="loadExample()">
+                Load sample conversation
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
